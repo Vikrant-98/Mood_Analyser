@@ -16,7 +16,7 @@ namespace MoodAnalysesTests
         [Fact]
         public void MoodAnalyserHappyTest()
         {
-            Mood mood = new Mood("I am in Happy mood");
+            Mood mood = new Mood("I am Happy");
             String actual = mood.analyserMood();
             Assert.Equal("HAPPY", actual);
         }
