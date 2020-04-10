@@ -15,6 +15,9 @@ namespace Mood_Analysis
             Console.WriteLine(mood.analyserMood());
         }
     }
+    /// <summary>
+    /// New Mood Analysis Exception class is defined and Extended the Exception Class
+    /// </summary>
     public class MoodAnalysisException : Exception
     {
         public enum ExceptionType
@@ -26,6 +29,12 @@ namespace Mood_Analysis
         {
         }
     }
+    /// <summary>
+    /// Mode class check the moode of the user wether he is happy or sad
+    /// Two condtructor are defined one is parameter and other is default
+    /// Analyser mood method returning the mood of user
+    /// User defined Exception Mood Analysis Exception is used to handle
+    /// </summary>
     public class Mood
     {
         String message;
@@ -42,7 +51,7 @@ namespace Mood_Analysis
             {
                 if (message.Length == 0)
                 {
-                    throw new Exception();
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL, "Attempt to Enter NULL String");
                 }
 
                 if (message.Contains("Sad"))
@@ -54,13 +63,10 @@ namespace Mood_Analysis
                     return "HAPPY";
                 }
             }
-            catch (Exception ex)
+            catch (MoodAnalysisException ex)
             {
                 return ex.Message;
             }
         }
-
     }
 }
-
-
