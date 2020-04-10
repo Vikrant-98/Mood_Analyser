@@ -15,6 +15,17 @@ namespace Mood_Analysis
             Console.WriteLine(mood.analyserMood());
         }
     }
+    public class MoodAnalysisException : Exception
+    {
+        public enum ExceptionType
+        {
+            ENTERED_NULL, ENTERED_EMPTY, NO_SUCH_FILE, NO_SUCH_METHOD, NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
+        }
+        ExceptionType type;
+        public MoodAnalysisException(ExceptionType type, String message) : base(message)
+        {
+        }
+    }
     public class Mood
     {
         String message;
