@@ -20,5 +20,12 @@ namespace MoodAnalysesTests
             String actual = mood.analyserMood();
             Assert.Equal("HAPPY", actual);
         }
+        [Fact]
+        public void MoodAnalysisExceptionTest()
+        {
+            Mood mood = new Mood("");
+            String actual = mood.analyserMood();
+            Assert.Equal("Attempt to Enter NULL String", actual);
+        }
     }
 }
