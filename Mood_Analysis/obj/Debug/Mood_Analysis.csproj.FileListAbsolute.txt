@@ -1,0 +1,7 @@
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\bin\Debug\Mood_Analysis.exe.config
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\bin\Debug\Mood_Analysis.exe
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\bin\Debug\Mood_Analysis.pdb
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\obj\Debug\Mood_Analysis.csprojAssemblyReference.cache
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\obj\Debug\Mood_Analysis.csproj.CoreCompileInputs.cache
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\obj\Debug\Mood_Analysis.exe
+C:\Users\The Daddy\source\repos\Mood_Analysis\Mood_Analysis\obj\Debug\Mood_Analysis.pdb
