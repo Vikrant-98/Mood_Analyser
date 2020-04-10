@@ -11,13 +11,21 @@ namespace Mood_Analysis
         static void Main(string[] args)
         {
             String input = Console.ReadLine();
-            Mood mood = new Mood();
-            Console.WriteLine(mood.analyserMood(input));
+            Mood mood = new Mood(input);
+            Console.WriteLine(mood.analyserMood());
         }
     }
     public class Mood
     {
-        public String analyserMood(String message)
+        String message;
+        public Mood()
+        {
+        }
+        public Mood(String message)
+        {
+            this.message = message;
+        }
+        public String analyserMood()
         {
                 if (message.Contains("Sad"))
                 {
