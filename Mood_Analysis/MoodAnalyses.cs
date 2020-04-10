@@ -27,6 +27,13 @@ namespace Mood_Analysis
         }
         public String analyserMood()
         {
+            try
+            {
+                if (message.Length == 0)
+                {
+                    throw new Exception();
+                }
+
                 if (message.Contains("Sad"))
                 {
                     return "SAD";
@@ -34,7 +41,14 @@ namespace Mood_Analysis
                 else
                 {
                     return "HAPPY";
-                }   
+                }
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
         }
+
     }
+}
 }
