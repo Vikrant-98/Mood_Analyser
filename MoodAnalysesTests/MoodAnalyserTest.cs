@@ -13,6 +13,12 @@ namespace MoodAnalysesTests
             String actual = mood.analyserMood("I am in Sad Mood");
             Assert.Equal("SAD", actual);
         }
-
+        [Fact]
+        public void MoodAnalyserHappyTest()
+        {
+            Mood mood = new Mood();
+            String actual = mood.analyserMood("I am in Happy Mood");
+            Assert.Equal("HAPPY", actual);
+        }
     }
 }
