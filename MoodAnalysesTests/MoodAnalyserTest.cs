@@ -27,5 +27,12 @@ namespace MoodAnalysesTests
             String actual = mood.analyserMood();
             Assert.Equal("Attempt to Enter NULL String", actual);
         }
+        [Fact]
+        public void MoodAnalysisObjectTest()
+        {
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            String actual = fact.Reflection();
+            Assert.Equal("Mood", actual);
+        }
     }
 }
