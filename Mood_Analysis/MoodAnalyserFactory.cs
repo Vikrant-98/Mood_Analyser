@@ -11,9 +11,21 @@ namespace Mood_Analysis
     {
         public string Reflection()
         {
-            Type type = typeof(Mood);
-            Console.WriteLine("Class : " + type.Name);
-            return type.Name;
+            try
+            {
+                Type type = typeof(Mood);
+                Console.WriteLine("Class : " + type.Name);
+                if (type.Name != "Mooo")
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS, "No Such Class");
+                }
+                return type.Name;
+            }
+            catch (MoodAnalysisException ex)
+            {
+                return ex.Message;
+            }
+            
         }
     }
 }
