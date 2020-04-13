@@ -9,8 +9,11 @@ namespace Mood_Analysis
 {
     public class MoodAnalyserFactory
     {
+        /// <summary>
+        /// Class Reflection checking
+        /// </summary>
+        /// <returns></returns>
         Type type = typeof(Mood);
-
         public string Reflection()
         {
             try
@@ -26,6 +29,10 @@ namespace Mood_Analysis
                 return ex.Message;
             } 
         }
+        /// <summary>
+        /// Constructor Reflection created
+        /// </summary>
+        /// <returns>Constructor name</returns>
         public string ReflectionConstructor()
         {
             ConstructorInfo[] constructorInfo = type.GetConstructors();
