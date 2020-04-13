@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Mood_Analysis
 {
-    public static class MoodAnalyses
+    public class MoodAnalyses
     {
         static void Main(string[] args)
         {
@@ -24,7 +25,7 @@ namespace Mood_Analysis
         {
             ENTERED_NULL, ENTERED_EMPTY, NO_SUCH_FILE, NO_SUCH_METHOD, NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
         }
-        ExceptionType type;
+        readonly ExceptionType type;
         public MoodAnalysisException(ExceptionType type, String message) : base(message)
         {
         }
@@ -37,7 +38,7 @@ namespace Mood_Analysis
     /// </summary>
     public class Mood
     {
-        String message;
+        public String message;
         public Mood()
         {
         }
