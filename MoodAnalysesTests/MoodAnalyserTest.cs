@@ -34,5 +34,12 @@ namespace MoodAnalysesTests
             String actual = fact.Reflection();
             Assert.Equal("Mood", actual);
         }
+        [Fact]
+        public void MoodAnalysisClassFail()
+        {
+             MoodAnalyserFactory fact = new MoodAnalyserFactory();
+             String actual = fact.Reflection();
+             Assert.Equal("No Such Class", actual);
+        }
     }
 }
