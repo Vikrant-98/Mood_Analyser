@@ -9,13 +9,13 @@ namespace Mood_Analysis
 {
     public class MoodAnalyserFactory
     {
+        Type type = typeof(Mood);
+
         public string Reflection()
         {
             try
             {
-                Type type = typeof(Mood);
-                Console.WriteLine("Class : " + type.Name);
-                if (type.Name != "Mooo")
+                if (type.Name != "Mood")
                 {
                     throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_CLASS, "No Such Class");
                 }
@@ -24,8 +24,28 @@ namespace Mood_Analysis
             catch (MoodAnalysisException ex)
             {
                 return ex.Message;
+            } 
+        }
+        public string ReflectionConstructor()
+        {
+            ConstructorInfo[] constructorInfo = type.GetConstructors();
+
+            foreach (ConstructorInfo c in constructorInfo)
+            {
+                try
+                {
+                    if (c.IsConstructor != false)
+                    {
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "There is no such method");
+                    }
+                    return type.Name;
+                }
+                catch (MoodAnalysisException ex)
+                {
+                    return ex.Message;
+                }
             }
-            
+            return type.Name;
         }
     }
 }

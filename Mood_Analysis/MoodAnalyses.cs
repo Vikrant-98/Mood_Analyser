@@ -11,6 +11,8 @@ namespace Mood_Analysis
     {
         static void Main(string[] args)
         {
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            fact.ReflectionConstructor();
             String input = Console.ReadLine();
             Mood mood = new Mood(input);
             Console.WriteLine(mood.analyserMood());
