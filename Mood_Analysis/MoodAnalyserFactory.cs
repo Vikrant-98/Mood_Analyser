@@ -5,11 +5,19 @@ namespace Mood_Analysis
 {
     public class MoodAnalyserFactory
     {
+        /// <summary>
+        /// MoodAnalyses object created and return object
+        /// </summary>
+        /// <returns>MoodAnalyses Object</returns>
         public MoodAnalyses PassObject1()
         {
             MoodAnalyses mood1 = new MoodAnalyses();
             return mood1;
         }
+        /// <summary>
+        /// Mood object created and return object 
+        /// </summary>
+        /// <returns>Mood object</returns>
         public Mood PassMoodObject2()
         {
             Mood mood1 = new Mood("I am in Happy Mood");

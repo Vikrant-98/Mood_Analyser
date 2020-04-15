@@ -13,11 +13,19 @@ namespace Mood_Analysis
         {
             
         }
+        /// <summary>
+        /// MoodAnalyses object created and return object
+        /// </summary>
+        /// <returns></returns>
         public MoodAnalyses PassObject()
         {
             MoodAnalyses mood = new MoodAnalyses();
             return mood;
         }
+        /// <summary>
+        /// Mood object created and return object 
+        /// </summary>
+        /// <returns>Mood object</returns>
         public Mood PassMoodObject1()
         {
             Mood mood = new Mood("I am in Happy Mood");
