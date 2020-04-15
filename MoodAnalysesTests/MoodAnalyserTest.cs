@@ -55,5 +55,12 @@ namespace MoodAnalysesTests
             MoodAnalyserFactory fact = new MoodAnalyserFactory();
             Assert.Equal(fact.PassMoodObject2().GetType(), mood.PassMoodObject1().GetType());
         }
+        [Fact]
+        public void MoodAnalysisParametericClassFail()
+        {
+            MoodAnalyserFactory parameter = new MoodAnalyserFactory();
+            String actual = parameter.Reflection();
+            Assert.Equal("No Such Class", actual);
+        }
     }
 }
