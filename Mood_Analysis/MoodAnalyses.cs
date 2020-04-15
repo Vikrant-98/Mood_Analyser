@@ -11,11 +11,17 @@ namespace Mood_Analysis
     {
         static void Main(string[] args)
         {
-            MoodAnalyserFactory fact = new MoodAnalyserFactory();
-            fact.ReflectionConstructor();
-            String input = Console.ReadLine();
-            Mood mood = new Mood(input);
-            Console.WriteLine(mood.analyserMood());
+            
+        }
+        public MoodAnalyses PassObject()
+        {
+            MoodAnalyses mood = new MoodAnalyses();
+            return mood;
+        }
+        public Mood PassMoodObject1()
+        {
+            Mood mood = new Mood("I am in Happy Mood");
+            return mood;
         }
     }
     /// <summary>
@@ -56,7 +62,6 @@ namespace Mood_Analysis
                 {
                     throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL, "Attempt to Enter NULL String");
                 }
-
                 if (message.Contains("Sad"))
                 {
                     return "SAD";

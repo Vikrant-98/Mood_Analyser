@@ -9,6 +9,16 @@ namespace Mood_Analysis
 {
     public class MoodAnalyserFactory
     {
+        public MoodAnalyses PassObject1()
+        {
+            MoodAnalyses mood1 = new MoodAnalyses();
+            return mood1;
+        }
+        public Mood PassMoodObject2()
+        {
+            Mood mood1 = new Mood("I am in Happy Mood");
+            return mood1;
+        }
         /// <summary>
         /// Class Reflection checking
         /// </summary>
@@ -53,6 +63,19 @@ namespace Mood_Analysis
                 }
             }
             return type.Name;
+        }
+        public void demo()
+        {
+            Type type = typeof(MoodAnalyses);
+
+            PropertyInfo[] propertyInfo = type.GetProperties();
+
+            Console.WriteLine("The list of properties of the Customer class are:--");
+
+            foreach (PropertyInfo pInfo in propertyInfo)
+            {
+                Console.WriteLine(pInfo.Name);
+            }
         }
     }
 }
