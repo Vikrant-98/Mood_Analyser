@@ -99,5 +99,12 @@ namespace MoodAnalysesTests
             String actual = fact.ReflectorMessageInvocation("I am in Sad mood");
             Assert.Equal("There is no such field", actual);
         }
+        [Fact]
+        public void MoodAnalysisMethodDynamicallyNullException()
+        {
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            String actual = fact.ReflectorMessageInvocation("");
+            Assert.Equal("Attempt to Enter NULL String", actual);
+        }
     }
 }
