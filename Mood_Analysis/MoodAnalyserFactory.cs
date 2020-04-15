@@ -99,6 +99,10 @@ namespace Mood_Analysis
             try
             {
                 Mood mood = new Mood(message);
+                if (message.Length == 0)
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.ENTERED_NULL, "Attempt to Enter NULL String");
+                }
                 if (message.Contains("Happy"))
                 {
                     return mood.analyserMood();
