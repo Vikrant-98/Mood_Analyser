@@ -96,8 +96,23 @@ namespace Mood_Analysis
         }
         public string ReflectorMessageInvocation(string message)
         {
-            Mood mood = new Mood(message);
-            return mood.analyserMood();
+            try
+            {
+                Mood mood = new Mood(message);
+                if (message.Contains("Happy"))
+                {
+                    return mood.analyserMood();
+                }
+                else
+                {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_FIELD, "There is no such field");
+                }
+
+            }
+            catch (MoodAnalysisException ex)
+            {
+                return ex.Message;
+            }
         }
     }
 }

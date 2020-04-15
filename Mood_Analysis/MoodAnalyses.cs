@@ -39,7 +39,7 @@ namespace Mood_Analysis
     {
         public enum ExceptionType
         {
-            ENTERED_NULL, ENTERED_EMPTY, NO_SUCH_FILE, NO_SUCH_METHOD, NO_SUCH_CLASS, OBJECT_CREATION_ISSUE
+            ENTERED_NULL, ENTERED_EMPTY, NO_SUCH_FILE, NO_SUCH_METHOD, NO_SUCH_CLASS, NO_SUCH_FIELD, OBJECT_CREATION_ISSUE
         }
         readonly ExceptionType type;
         public MoodAnalysisException(ExceptionType type, String message) : base(message)
