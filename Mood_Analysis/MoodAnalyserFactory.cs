@@ -94,5 +94,10 @@ namespace Mood_Analysis
             Mood mood = new Mood("I am in Happy Mood");
             return mood.analyserMood();
         }
+        public string ReflectorMessageInvocation(string message)
+        {
+            Mood mood = new Mood(message);
+            return mood.analyserMood();
+        }
     }
 }
