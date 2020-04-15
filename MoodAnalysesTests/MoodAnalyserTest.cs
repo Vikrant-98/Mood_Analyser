@@ -30,9 +30,9 @@ namespace MoodAnalysesTests
         [Fact]
         public void MoodAnalysisObjectTest()
         {
+            MoodAnalyses mood = new MoodAnalyses();
             MoodAnalyserFactory fact = new MoodAnalyserFactory();
-            String actual = fact.Reflection();
-            Assert.Equal("Mood", actual);
+            Assert.Equal(fact.PassObject1().GetType(), mood.PassObject().GetType());
         }
         [Fact]
         public void MoodAnalysisClassFail()
@@ -47,6 +47,13 @@ namespace MoodAnalysesTests
             MoodAnalyserFactory fact = new MoodAnalyserFactory();
             String actual = fact.ReflectionConstructor();
             Assert.Equal("There is no such method", actual);
+        }
+        [Fact]
+        public void MoodAnalysisobject()
+        {
+            MoodAnalyses mood = new MoodAnalyses();
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            Assert.Equal(fact.PassMoodObject2().GetType(), mood.PassMoodObject1().GetType());
         }
     }
 }
