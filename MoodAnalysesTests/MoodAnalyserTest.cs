@@ -78,5 +78,12 @@ namespace MoodAnalysesTests
             Assert.Equal("analyserMood", actual1);
             Assert.Equal("HAPPY",actual2);
         }
+        [Fact]
+        public void MoodAnalysisInvalidMethod()
+        {
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            String actual1 = fact.ReflectionMethod1();
+            Assert.Equal("There is no such method", actual1);
+        }
     }
 }
