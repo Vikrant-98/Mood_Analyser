@@ -74,8 +74,18 @@ namespace Mood_Analysis
             
             foreach (MethodInfo temp in methodInfo)
             {
-                if (temp.Name == "analyserMood")
+                try
+                {
+                    if (temp.Name != "analyserMood")
+                    {
+                        throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.NO_SUCH_METHOD, "There is no such method");
+                    }
                     return temp.Name;
+                }
+                catch (MoodAnalysisException ex)
+                {
+                    return ex.Message;
+                }
             }
             return "Null";
         }
