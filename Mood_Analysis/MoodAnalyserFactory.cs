@@ -68,5 +68,21 @@ namespace Mood_Analysis
             }
             return type.Name;
         }
+        public string ReflectionMethod1()
+        {
+            MethodInfo[] methodInfo = type.GetMethods();
+            
+            foreach (MethodInfo temp in methodInfo)
+            {
+                if (temp.Name == "analyserMood")
+                    return temp.Name;
+            }
+            return "Null";
+        }
+        public string ReflectionMethod2()
+        {
+            Mood mood = new Mood("I am in Happy Mood");
+            return mood.analyserMood();
+        }
     }
 }
