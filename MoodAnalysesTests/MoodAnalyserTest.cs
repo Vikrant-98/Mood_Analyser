@@ -49,7 +49,7 @@ namespace MoodAnalysesTests
             Assert.Equal("There is no such method", actual);
         }
         [Fact]
-        public void MoodAnalysisobject()
+        public void MoodAnalysisParametericobject()
         {
             MoodAnalyses mood = new MoodAnalyses();
             MoodAnalyserFactory fact = new MoodAnalyserFactory();
@@ -61,6 +61,13 @@ namespace MoodAnalysesTests
             MoodAnalyserFactory parameter = new MoodAnalyserFactory();
             String actual = parameter.Reflection();
             Assert.Equal("No Such Class", actual);
+        }
+        [Fact]
+        public void MoodAnalysisParametericConstructorFail()
+        {
+            MoodAnalyserFactory fact = new MoodAnalyserFactory();
+            String actual = fact.ReflectionConstructor();
+            Assert.Equal("There is no such method", actual);
         }
     }
 }
